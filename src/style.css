@@ -46,6 +46,16 @@
 .logo-div svg:hover {
   color: var(--backColor);
 }
+
+.addNewTodo{
+  background-color: var(--color5);
+  height: 100%;
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 .dropDown-container {
   width: 20%;
   height: 40%;
@@ -88,9 +98,12 @@
 }
 
 .login-button {
-  width: 10%;
-  height: 100%;
+  padding: 0 20px;
   font-size: 2rem;
+  display: flex;
+  text-align: center;
+  align-self: flex-start;
+  border-radius: 0 0 20px;
   border: none;
   cursor: pointer;
 }
@@ -102,7 +115,7 @@
 .left-side {
   background-color: var(--color6);
   grid-column: 1/2;
-  grid-row: 2/3;
+  grid-row: 2/-1;
 
   gap: 5%;
   display: flex;
@@ -170,12 +183,12 @@
 .right-main .box {
   background-color: var(--color2);
   padding: 10px;
-  gap: 15px;
+  gap: 5px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
 }
 
 footer {
@@ -185,4 +198,5 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 5px 0;
 }
