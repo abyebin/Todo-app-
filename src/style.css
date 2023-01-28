@@ -23,7 +23,30 @@ body{
     background-color: var(--color4);
     grid-column: 1/-1;
     grid-row: 1/2;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
+.logo-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 30px;
+    padding: 20px;
+}
+
+.logo-div svg{
+    font-size: 2rem;
+}
+
+.login-button{
+    width: 10%;
+    height: 100%;
+    border: none;
+}
+
 .left-side{
     background-color: var(--color6);
     grid-column: 1/2;
