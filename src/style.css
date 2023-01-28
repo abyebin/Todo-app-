@@ -9,11 +9,12 @@ body{
     width: 100%;
     min-height: 100vh;
     display: grid;
-    grid-template: 1fr 6fr 0.5fr/ 1fr 5fr;
+    grid-template: 0.7fr 7fr 0.5fr/ 1fr 5fr;
 }
 :root{
     --backColor: #64fcef;
     --contColor: #0c0d11;
+    --color2: #f3efef;
     --color3: #c5c6c8;
     --color4: #46a29f;
     --color5: #fff8f8;
@@ -33,25 +34,63 @@ body{
     align-items: center;
     justify-content: center;
 
-    gap: 30px;
+    gap: 10px;
     padding: 20px;
 }
 
-.logo-div svg{
-    font-size: 2rem;
+.logo-div svg,.logo-div h1{
+    font-size: 4rem;
+    color: var(--color5);
+}
+
+.logo-div svg:hover{
+    color: var(--backColor);
 }
 
 .login-button{
     width: 10%;
     height: 100%;
+    font-size: 2rem;
     border: none;
+}
+.login-button:hover{
+    text-shadow: -1px 6px 5px rgba(0,0,0,0.41);
+    background-color: var(--color5);
 }
 
 .left-side{
     background-color: var(--color6);
     grid-column: 1/2;
     grid-row: 2/3;
+
+    gap: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
+.viewBy{
+    display: flex;
+    flex-direction: column;
+}
+.view{
+    margin-bottom: 3%;
+    width: 100%;
+    background-color: var(--color3);
+    padding: 10px 0;
+    text-align: center;
+}
+.view h2{
+    font-size: 1rem;
+    font-weight: normal;
+}
+.view:hover,.view h2:hover{
+    background: linear-gradient(90deg,var(--color3),var(--color5));
+    font-weight: bold;
+}
+.project{
+
+}
+
 .right-main{
     background-color: var(--color5);
     grid-column: 2/-1;
