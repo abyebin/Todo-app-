@@ -14,6 +14,7 @@
   --color4: #46a29f;
   --color5: #fff8f8;
   --color6: #444343;
+  --color7: rgb(169, 247, 146);
 
   --transperent1: rgba(0, 0, 0, 0.5);
 }
@@ -240,18 +241,34 @@ form .input-div{
   gap: 10px;
 
   display: grid;
-  grid-template: repeat(auto-fill, minmax(200px, 1fr)) / repeat(auto-fill, minmax(200px, 1fr));
+  grid-template: repeat(auto-fill, minmax(250px, 1fr)) / repeat(auto-fill, minmax(300px, 1fr));
 }
 .right-main .box {
-  background-color: var(--color2);
+  background-color: var(--transperent1);
   padding: 10px;
   gap: 5px;
 
-  display: flex;
-  flex-direction: column;
+  min-height: min-content;
+
+  display: grid;
+  grid-template: 1fr  1fr /1fr;
   align-items: center;
-  justify-content: space-between;
-  text-align: justify;
+  justify-content: center;
+  text-align: center;
+  color: var(--backColor);
+}
+.right-main p{
+  color: var(--contColor);
+  font-size: 1.2rem;
+}
+.date-and-title{
+  align-self: flex-start;
+}
+.right-main h1{
+  color: var(--color7);
+  font-family: poppins,sans-serif;
+  text-align: center;
+  align-self: flex-start;
 }
 
 footer {

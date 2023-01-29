@@ -10,16 +10,20 @@ export function displayToPage() {
     box.classList.add('box')
     main.appendChild(box);
 
+    const dateAndTitle = document.createElement('div')
+    dateAndTitle.classList.add('date-title-div')
+    box.appendChild(dateAndTitle)
+
     for(let i in x){
       if(i === "title"){
         const titleText = document.createElement('h1') 
         titleText.textContent = `${x[i]}`
-        box.appendChild(titleText)
+        dateAndTitle.appendChild(titleText)
       }
       else if(i === "date"){
         const titleText = document.createElement('h3') 
         titleText.textContent = `${x[i]}`
-        box.appendChild(titleText)
+        dateAndTitle.appendChild(titleText)
       }
       else if(i === "text"){
         const titleText = document.createElement('p') 
