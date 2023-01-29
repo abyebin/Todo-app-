@@ -7,6 +7,30 @@
     <title>To do</title>
   </head>
   <body>
+    <div class="addNewForm">
+      <form id="projectForm" action="">
+
+        <div class="input-div">
+          <label for="todo">Todo Title</label>
+          <input type="text" name="todo" id="todo">
+        </div>
+
+        <div class="input-div">
+          <label for="date">Date</label>
+          <input type="date" name="date" id="date">
+        </div>
+
+        <div class="input-div">
+          <label for="text">Note</label>
+          <textarea name="text" id="text" cols="30" rows="10"></textarea>
+        </div>
+
+        <div class="input-div">
+          <input id="submitForm" type="submit">
+        </div>
+
+      </form>
+    </div>
     <div class="main">
       <!-- nav -->
       <div class="nav">
@@ -75,6 +99,6 @@
       </footer>
     </div>
     <script src="index.bundle.js"></script>
-    <script src="checkUi.bundle.js"></script>
+    <script src="storage.bundle.js"></script>
   </body>
 </html>

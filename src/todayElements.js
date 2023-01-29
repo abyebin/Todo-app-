@@ -1,22 +1,51 @@
+import { viewData } from './storage';
+import { todoData } from './storage';
+
 const main = document.querySelector('.right-main');
-export default function todaysTodo() {
-  const box = document.createElement('div');
-  box.classList.add('box');
-  main.appendChild(box);
 
-  //main > box > h1
-  const title = document.createElement('h1');
-  title.textContent = 'Text Temp Title';
-  box.appendChild(title);
+export function displayToPage() {
+  todoData.forEach((x) => {
+    
+    const box = document.createElement('div');
+    box.classList.add('box')
+    main.appendChild(box);
 
-  //mian box > Date
-  const dateBox = document.createElement('h3');
-  dateBox.textContent = '28/01/2023';
-  box.appendChild(dateBox);
+    // //main > box > h1
+    // const title = document.createElement('h1');
 
-  //main > box > para
-  const para = document.createElement('p');
-  para.textContent =
-    'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime numquam recusandae eveniet, ipsam minima ex fugit doloremque ratione consectetur est?';
-  box.appendChild(para);
+    // box.appendChild(title);
+
+    // //mian box > Date
+    // const dateBox = document.createElement('h3');
+    // box.appendChild(dateBox);
+
+    // //main > box > para
+    // const para = document.createElement('p');
+    // box.appendChild(para); 
+
+    for(let i in x){
+      console.log(i,'i')
+      if(i === "title"){
+        const titleText = document.createElement('h1') 
+        titleText.textContent = `${x[i]}`
+        box.appendChild(titleText)
+      }
+      else if(i === "date"){
+        const titleText = document.createElement('h3') 
+        titleText.textContent = `${x[i]}`
+        box.appendChild(titleText)
+      }
+      else if(i === "text"){
+        const titleText = document.createElement('p') 
+        titleText.textContent = `${x[i]}`
+        box.appendChild(titleText)
+      }
+    }
+
+    
+
+  });
+
+
+  console.log(todoData, 'todo Elements');
 }

@@ -3,13 +3,6 @@
   margin: 0;
   padding: 0;
 }
-
-.main {
-  width: 100%;
-  min-height: 100vh;
-  display: grid;
-  grid-template: 100px auto 50px/ 1fr 5fr;
-}
 :root {
   --backColor: #64fcef;
   --contColor: #0c0d11;
@@ -18,7 +11,55 @@
   --color4: #46a29f;
   --color5: #fff8f8;
   --color6: #444343;
+
+  --transperent1: rgba(0, 0, 0, 0.5);
 }
+
+.addNewForm{
+  background-color: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(5px);
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  z-index: 99;
+
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+.addNewForm form{
+background-color: var(--color4);
+padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+form .input-div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.input-div input{
+  padding: 10px;
+  min-width: 100%;
+  height: 80%;
+}
+
+.main {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  grid-template: 100px auto 50px/ 1fr 5fr;
+}
+
 .nav {
   background-color: var(--color4);
   grid-column: 1/-1;
@@ -106,6 +147,7 @@
   border-radius: 0 0 20px;
   border: none;
   cursor: pointer;
+  overflow: hidden;
 }
 .login-button:hover {
   text-shadow: -1px 6px 5px rgba(0, 0, 0, 0.41);
