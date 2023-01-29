@@ -1,5 +1,4 @@
-
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,800;1,400;1,600;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,800;1,400;1,600;1,800;1,900&display=swap');
 
 * {
   box-sizing: border-box;
@@ -19,7 +18,7 @@
   --transperent1: rgba(0, 0, 0, 0.5);
 }
 
-.addNewForm{
+.addNewForm {
   background-color: rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(5px);
   width: 100%;
@@ -31,11 +30,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
 }
-.addNewForm form{
-background-color: var(--color4);
-padding: 20px;
+.addNewForm form {
+  background-color: var(--color4);
+  padding: 20px;
 
   display: flex;
   flex-direction: column;
@@ -43,21 +41,21 @@ padding: 20px;
   justify-content: center;
   gap: 15px;
 }
-.input-div{
+.input-div {
   width: 100%;
 }
-.addNewForm .button{
- cursor: pointer;
+.addNewForm .button {
+  cursor: pointer;
 }
 
-form .input-div{
+form .input-div {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
 }
 
-.input-div input{
+.input-div input {
   padding: 10px;
   min-width: 100%;
   height: 80%;
@@ -98,7 +96,7 @@ form .input-div{
   color: var(--backColor);
 }
 
-.addNewTodo{
+.addNewTodo {
   background-color: var(--contColor);
   color: var(--color5);
   height: 100%;
@@ -110,12 +108,12 @@ form .input-div{
   font-family: 'Poppins', sans-serif;
   cursor: pointer;
 }
-.addNewTodo:hover{
+.addNewTodo:hover {
   background-color: #444343;
   text-shadow: 0px 0px 20px var(--color4);
   border-radius: 0 20px;
 }
-.addNewTodo:active{
+.addNewTodo:active {
   text-shadow: none;
 }
 .dropDown-container {
@@ -239,36 +237,48 @@ form .input-div{
 
   padding: 10px;
   gap: 10px;
-
-  display: grid;
-  grid-template: repeat(auto-fill, minmax(250px, 1fr)) / repeat(auto-fill, minmax(300px, 1fr));
+  display: flex;
+  flex-direction: column;
 }
 .right-main .box {
   background-color: var(--transperent1);
-  padding: 10px;
-  gap: 5px;
-
-  min-height: min-content;
-
+  padding: 0 10px 0 0;
+  gap: 15px;
   display: grid;
-  grid-template: 1fr  1fr /1fr;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  grid-template: 1fr/3% auto 100px 50%;
+  width: 100%;
   color: var(--backColor);
 }
-.right-main p{
+.noteDiv {
   color: var(--contColor);
   font-size: 1.2rem;
+  margin: auto 0;
+  padding: 5px;
 }
-.date-and-title{
-  align-self: flex-start;
+.dateDiv {
+  margin: auto 0;
 }
-.right-main h1{
+.titleDiv{
   color: var(--color7);
-  font-family: poppins,sans-serif;
-  text-align: center;
-  align-self: flex-start;
+  font-family: poppins, sans-serif;
+  text-align: start;
+  margin: auto 0;
+}
+
+.priority{
+  padding: 10%
+}
+.low{
+  background-color: green;
+}
+.medium{
+  background-color: yellow;
+}
+.high{
+  background-color: #d46407;
+}
+.urgent{
+  background-color: red;
 }
 
 footer {
