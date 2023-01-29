@@ -1,4 +1,4 @@
-import { viewData } from './storage';
+
 import { todoData } from './storage';
 
 const main = document.querySelector('.right-main');
@@ -9,9 +9,8 @@ export function displayToPage() {
     const box = document.createElement('div');
     box.classList.add('box')
     main.appendChild(box);
-    
+
     for(let i in x){
-      console.log(i,'i')
       if(i === "title"){
         const titleText = document.createElement('h1') 
         titleText.textContent = `${x[i]}`
@@ -28,11 +27,6 @@ export function displayToPage() {
         box.appendChild(titleText)
       }
     }
-
-    
-
   });
 
-
-  console.log(todoData, 'todo Elements');
 }

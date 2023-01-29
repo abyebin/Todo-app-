@@ -12,7 +12,7 @@
 
         <div class="input-div">
           <label for="todo">Todo Title</label>
-          <input type="text" name="todo" id="todo" required>
+          <input type="text" name="todo" id="todo" required  maxlength="20">
         </div>
 
         <div class="input-div">
@@ -22,11 +22,18 @@
 
         <div class="input-div">
           <label for="text">Note</label>
-          <textarea name="text" id="text" cols="30" rows="10" maxlength="180"></textarea>
+          <textarea  name="text" id="text" cols="30" rows="10" maxlength="180"></textarea>
         </div>
 
         <div class="input-div">
-          <input id="submitForm" type="submit">
+          <input class="button" id="submitForm" type="submit">
+        </div>
+
+        <div class="input-div">
+          <input class="button" id="closeFormButton" value="Close" type="submit">
+        </div>
+        <div class="input-div">
+          <input class="button" id="resetFormButton" value="Reset" type="reset">
         </div>
 
       </form>

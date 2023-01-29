@@ -6,22 +6,22 @@ export const todoData = [
   {
     title: 'Wash Clothes',
     date: '2023-01-31',
-    text: 'Its the end of the month, Wash Your Cloths.'
+    text: 'Its the end of the month, Wash Your Cloths.',
   },
   {
     title: 'Water Plants',
     date: '2025-01-01',
-    text: 'Different people have different opinions on when and how to water the plants, but the most appropriate time of watering the plants is in the early morning or late evening..'
+    text: 'Different people have different opinions on when and how to water the plants, but the most appropriate time of watering the plants is in the early morning or late evening..',
   },
   {
     title: 'Sea side walk',
     date: '2023-02-06',
-    text: 'Go for a Walk'
+    text: 'Go for a Walk',
   },
   {
-    title: 'Ebin\'s BirthDay',
+    title: "Ebin's BirthDay",
     date: '2023-09-26',
-    text: 'Its Ebin\'s Birth Day, Remember to bring gift.'
+    text: "Its Ebin's Birth Day, Remember to bring gift.",
   },
 ];
 
@@ -31,11 +31,11 @@ function Todo(title, date, text) {
   this.text = text;
 }
 
-function closeForm() {
+export function closeForm() {
   formDiv.setAttribute('style', 'display: none');
 }
 
-function resetForm() {
+export function resetForm() {
   form.reset();
 }
 
@@ -54,13 +54,13 @@ export function addNew() {
     const todo1 = new Todo(title, data, text);
 
     todoData.push(todo1);
+
     resetForm();
     closeForm();
     event.preventDefault();
+    //prevent tasks from doubiling
+    const page = (document.querySelector('.right-main').innerHTML = '');
     displayToPage();
+    console.log([...todoData])
   }
-}
-
-export function viewData() {
-  console.log(todoData, 'View Data');
 }
