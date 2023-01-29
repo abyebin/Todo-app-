@@ -50,19 +50,20 @@ export function displayForm() {
 
 export function addNew() {
   const title = document.getElementById('todo').value;
-  const data = document.getElementById('date').value;
+  const date = document.getElementById('date').value;
   const text = document.getElementById('text').value;
   const priority = document.getElementById('priority').value;
 
   if (title.length < 1 || date.length < 1) {
     return;
   } else {
-    const todo1 = new Todo(title, data, text, priority);
+    const todo1 = new Todo(title, date, text, priority);
     todoData.push(todo1);
 
     resetForm();
     closeForm();
     event.preventDefault();
+    
     //prevent tasks from doubiling
     const page = (document.querySelector('.right-main').innerHTML = '');
     displayToPage();

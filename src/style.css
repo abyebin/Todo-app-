@@ -245,7 +245,7 @@ form .input-div {
   padding: 0 10px 0 0;
   gap: 15px;
   display: grid;
-  grid-template: 1fr/3% auto 100px 50%;
+  grid-template: 1fr/auto 20% 100px 60%;
   width: 100%;
   color: var(--backColor);
 }
@@ -254,6 +254,8 @@ form .input-div {
   font-size: 1.2rem;
   margin: auto 0;
   padding: 5px;
+  display: flex;
+  overflow: hidden;
 }
 .dateDiv {
   margin: auto 0;
@@ -279,6 +281,18 @@ form .input-div {
 }
 .urgent{
   background-color: red;
+}
+.iconsDiv{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.iconsDiv svg{
+  font-size: 1.5rem;
+}
+.iconsDiv svg:hover{
+  color: var(--color6);
 }
 
 footer {

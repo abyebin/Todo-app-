@@ -13,6 +13,21 @@ export function displayToPage() {
     iconsDiv.classList.add('iconsDiv');
     box.appendChild(iconsDiv);
 
+    const check = document.createElement('i')
+    check.classList.add('fa-regular')
+    check.classList.add('fa-square')
+    iconsDiv.appendChild(check)
+
+    const edit = document.createElement('i')
+    edit.classList.add('fa-regular')
+    edit.classList.add('fa-pen-to-square')
+    iconsDiv.appendChild(edit)
+
+    const dlt = document.createElement('i')
+    dlt.classList.add('fa-solid')
+    dlt.classList.add('fa-trash')
+    iconsDiv.appendChild(dlt)
+
     const titleDiv = document.createElement('div');
     titleDiv.classList.add('titleDiv');
     box.appendChild(titleDiv);
