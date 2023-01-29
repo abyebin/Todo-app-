@@ -9,20 +9,7 @@ export function displayToPage() {
     const box = document.createElement('div');
     box.classList.add('box')
     main.appendChild(box);
-
-    // //main > box > h1
-    // const title = document.createElement('h1');
-
-    // box.appendChild(title);
-
-    // //mian box > Date
-    // const dateBox = document.createElement('h3');
-    // box.appendChild(dateBox);
-
-    // //main > box > para
-    // const para = document.createElement('p');
-    // box.appendChild(para); 
-
+    
     for(let i in x){
       console.log(i,'i')
       if(i === "title"){

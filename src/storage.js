@@ -1,9 +1,29 @@
-import { displayToPage } from "./todayElements";
-
+import { displayToPage } from './todayElements';
 const formDiv = document.querySelector('.addNewForm');
 const form = document.getElementById('projectForm');
 
-export const todoData = [];
+export const todoData = [
+  {
+    title: 'Wash Clothes',
+    date: '2023-01-31',
+    text: 'Its the end of the month, Wash Your Cloths.'
+  },
+  {
+    title: 'Water Plants',
+    date: '2025-01-01',
+    text: 'Different people have different opinions on when and how to water the plants, but the most appropriate time of watering the plants is in the early morning or late evening..'
+  },
+  {
+    title: 'Sea side walk',
+    date: '2023-02-06',
+    text: 'Go for a Walk'
+  },
+  {
+    title: 'Ebin\'s BirthDay',
+    date: '2023-09-26',
+    text: 'Its Ebin\'s Birth Day, Remember to bring gift.'
+  },
+];
 
 function Todo(title, date, text) {
   this.title = title;
@@ -28,15 +48,19 @@ export function addNew() {
   const data = document.getElementById('date').value;
   const text = document.getElementById('text').value;
 
-  const todo1 = new Todo(title, data, text);
-  todoData.push(todo1);
-  resetForm();
-  closeForm();
-  event.preventDefault();
-  displayToPage()
-  console.log(todoData)
+  if (title.length < 1 || date.length < 1) {
+    return;
+  } else {
+    const todo1 = new Todo(title, data, text);
+
+    todoData.push(todo1);
+    resetForm();
+    closeForm();
+    event.preventDefault();
+    displayToPage();
+  }
 }
 
 export function viewData() {
-  console.log(todoData,"View Data");
+  console.log(todoData, 'View Data');
 }
