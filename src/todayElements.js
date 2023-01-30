@@ -1,10 +1,14 @@
-import { todoData } from './storage';
+
+const submitButton = document.getElementById('submitForm');
 
 const main = document.querySelector('.right-main');
 
 export function displayToPage() {
-  console.log(todoData);
-  todoData.forEach((x) => {
+
+  let fromLocal = localStorage.getItem('todoData')
+  let fromLocalArr = JSON.parse(fromLocal)
+
+  fromLocalArr.forEach((x) => {
     const box = document.createElement('div');
     box.classList.add('box');
     main.appendChild(box);
@@ -41,7 +45,6 @@ export function displayToPage() {
     box.appendChild(noteDiv);
 
     for (let i in x) {
-      console.log(x)
       if (i === 'title') {
         const titleText = document.createElement('h1');
         titleText.textContent = `${x[i]}`;
@@ -57,7 +60,6 @@ export function displayToPage() {
       } else if (i === 'priority') {
         let y = parseInt(x[i]);
 
-        const priorityx = document.createElement('h3');
         if (y < 20) {
           iconsDiv.classList.add('priority');
           iconsDiv.classList.add('low');
@@ -67,9 +69,12 @@ export function displayToPage() {
         } else if (y >= 50 && y < 80) {
           iconsDiv.classList.add('priority');
           iconsDiv.classList.add('high');
-        } else {
+        } else if(y >= 80 && y <= 100){
           iconsDiv.classList.add('priority');
           iconsDiv.classList.add('urgent');
+        }else{
+          iconsDiv.classList.add('priority');
+          iconsDiv.classList.add('x');
         }
       }
     }

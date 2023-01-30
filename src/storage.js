@@ -29,6 +29,8 @@ export const todoData = [
   },
 ];
 
+
+
 function Todo(title, date, text, priority) {
   this.title = title;
   this.date = date;
@@ -59,6 +61,9 @@ export function addNew() {
   } else {
     const todo1 = new Todo(title, date, text, priority);
     todoData.push(todo1);
+
+    let x = JSON.stringify(todoData)
+    localStorage.setItem('todoData',x)
 
     resetForm();
     closeForm();

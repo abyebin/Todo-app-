@@ -4,7 +4,7 @@ import '@fortawesome/fontawesome-free/js/solid';
 import '@fortawesome/fontawesome-free/js/regular';
 import '@fortawesome/fontawesome-free/js/brands';
 
-import {addNew, displayForm, closeForm, resetForm } from './storage';
+import {addNew, displayForm, closeForm, resetForm, toLocal } from './storage';
 import { displayToPage} from './todayElements';
 
 //querySelecters
@@ -19,4 +19,7 @@ resetFormButton.addEventListener('click',resetForm)
 
 addNewButton.addEventListener('click', displayForm);
 submitButton.addEventListener('click', addNew);
+
 window.onload = displayToPage()
+
+console.log('Hello')
