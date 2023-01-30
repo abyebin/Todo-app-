@@ -2,7 +2,7 @@ import { displayToPage } from './todayElements';
 const formDiv = document.querySelector('.addNewForm');
 const form = document.getElementById('projectForm');
 
-export const todoData = [
+export let todoData = [
   {
     title: 'Wash Clothes',
     date: '2023-01-31',
@@ -28,8 +28,6 @@ export const todoData = [
     priority: '90',
   },
 ];
-
-
 
 function Todo(title, date, text, priority) {
   this.title = title;
@@ -59,16 +57,19 @@ export function addNew() {
   if (title.length < 1 || date.length < 1) {
     return;
   } else {
-    const todo1 = new Todo(title, date, text, priority);
-    todoData.push(todo1);
-
-    let x = JSON.stringify(todoData)
-    localStorage.setItem('todoData',x)
+    // const todo1 = new Todo(title, date, text, priority);
+    // todoData.push(todo1);
+    // localStorage.setItem('todoData',JSON.stringify(todoData))
 
     resetForm();
     closeForm();
     event.preventDefault();
-    
+
+    const existingData = JSON.parse(localStorage.getItem('todoData')) || [];
+    todoData = [...existingData, new Todo(title, date, text, priority)];
+    console.log(todoData)
+    localStorage.setItem('todoData', JSON.stringify(todoData));
+
     //prevent tasks from doubiling
     const page = (document.querySelector('.right-main').innerHTML = '');
     displayToPage();

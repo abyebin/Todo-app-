@@ -7,7 +7,7 @@ export function displayToPage() {
 
   let fromLocal = localStorage.getItem('todoData')
   let fromLocalArr = JSON.parse(fromLocal)
-
+  
   fromLocalArr.forEach((x) => {
     const box = document.createElement('div');
     box.classList.add('box');
