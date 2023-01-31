@@ -5,6 +5,8 @@ module.exports = {
   entry: {
     index: './src/index.js',
     storage: './src/storage.js',
+    todayElements: './src/todayElements.js',
+    newFile: "./src/newFile.js"
   },
   output: {
     filename: '[name].bundle.js',

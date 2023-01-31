@@ -10,13 +10,13 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/storage.js":
+/***/ "./src/newFile.js":
 /*!************************!*\
-  !*** ./src/storage.js ***!
+  !*** ./src/newFile.js ***!
   \************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"addNew\": () => (/* binding */ addNew),\n/* harmony export */   \"closeForm\": () => (/* binding */ closeForm),\n/* harmony export */   \"displayForm\": () => (/* binding */ displayForm),\n/* harmony export */   \"resetForm\": () => (/* binding */ resetForm),\n/* harmony export */   \"todoData\": () => (/* binding */ todoData)\n/* harmony export */ });\n/* harmony import */ var _todayElements__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./todayElements */ \"./src/todayElements.js\");\n\nconst formDiv = document.querySelector('.addNewForm');\nconst form = document.getElementById('projectForm');\n\nlet todoData = [\n  {\n    title: 'Wash Clothes',\n    date: '2023-01-31',\n    text: 'Its the end of the month, Wash Your Cloths.',\n    priority: '10',\n  },\n  {\n    title: 'Water Plants',\n    date: '2025-01-01',\n    text: 'Different people have different opinions on when and how to water the plants, but the most appropriate time of watering the plants is in the early morning or late evening..',\n    priority: '50',\n  },\n  {\n    title: 'Sea side walk',\n    date: '2023-02-06',\n    text: 'Go for a Walk',\n    priority: '30',\n  },\n  {\n    title: \"Ebin's BirthDay\",\n    date: '2023-09-26',\n    text: \"Its Ebin's Birth Day, Remember to bring gift.\",\n    priority: '90',\n  },\n];\n\nfunction Todo(title, date, text, priority) {\n  this.title = title;\n  this.date = date;\n  this.text = text;\n  this.priority = priority;\n}\n\nfunction closeForm() {\n  formDiv.setAttribute('style', 'display: none');\n}\n\nfunction resetForm() {\n  form.reset();\n}\n\nfunction displayForm() {\n  formDiv.setAttribute('style', 'display: flex');\n}\n\nfunction addNew() {\n  const title = document.getElementById('todo').value;\n  const date = document.getElementById('date').value;\n  const text = document.getElementById('text').value;\n  const priority = document.getElementById('priority').value;\n\n  if (title.length < 1 || date.length < 1) {\n    return;\n  } else {\n    // const todo1 = new Todo(title, date, text, priority);\n    // todoData.push(todo1);\n    // localStorage.setItem('todoData',JSON.stringify(todoData))\n\n    resetForm();\n    closeForm();\n    event.preventDefault();\n\n    const existingData = JSON.parse(localStorage.getItem('todoData')) || [];\n    todoData = [...existingData, new Todo(title, date, text, priority)];\n    console.log(todoData)\n    localStorage.setItem('todoData', JSON.stringify(todoData));\n\n    //prevent tasks from doubiling\n    const page = (document.querySelector('.right-main').innerHTML = '');\n    (0,_todayElements__WEBPACK_IMPORTED_MODULE_0__.displayToPage)();\n  }\n}\n\n\n//# sourceURL=webpack://todo/./src/storage.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"resetPage\": () => (/* binding */ resetPage),\n/* harmony export */   \"x\": () => (/* binding */ x)\n/* harmony export */ });\n/* harmony import */ var _todayElements__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./todayElements */ \"./src/todayElements.js\");\n\r\n\r\n\r\n\r\n\r\nfunction resetPage(){\r\n    const storedData = JSON.parse(localStorage.getItem('todoData'))\r\n    storedData.pop()\r\n    localStorage.setItem('todoData',JSON.stringify(storedData))\r\n    const page = (document.querySelector('.right-main').innerHTML = '');\r\n    (0,_todayElements__WEBPACK_IMPORTED_MODULE_0__.displayToPage)()\r\n}\r\n\r\n// const boxes = document.querySelector('.right-main')\r\n\r\n// boxes.addEventListener('click',(event)=>{\r\n//     if(event.target.matches('.fa-trash')){\r\n//         const parentDiv = event.target.closest('.box')\r\n//         parentDiv.remove()\r\n//     }\r\n// })\r\n\r\n\r\n\r\n// export function deleteItems(){\r\n//     const storedData = JSON.parse(localStorage.getItem('todoData'))\r\n    \r\n//     storedData.splice(2,1)\r\n//     localStorage.setItem('todoData',JSON.stringify(storedData))\r\n//     const page = (document.querySelector('.right-main').innerHTML = '');\r\n//     displayToPage()\r\n// }\r\n\r\n\r\n\r\n\r\n\r\nfunction x(){\r\n    console.log(\"Helloslfjlsa\")\r\n}\n\n//# sourceURL=webpack://todo/./src/newFile.js?");
 
 /***/ }),
 
@@ -90,7 +90,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/storage.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/newFile.js");
 /******/ 	
 /******/ })()
 ;

@@ -1,6 +1,5 @@
 
 const submitButton = document.getElementById('submitForm');
-
 const main = document.querySelector('.right-main');
 
 export function displayToPage() {
