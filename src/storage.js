@@ -63,15 +63,15 @@ export function addNew() {
 
     resetForm();
     closeForm();
-    event.preventDefault();
+    // event.preventDefault();
 
     const existingData = JSON.parse(localStorage.getItem('todoData')) || [];
     todoData = [...existingData, new Todo(title, date, text, priority)];
-    console.log(todoData)
     localStorage.setItem('todoData', JSON.stringify(todoData));
 
     //prevent tasks from doubiling
     const page = (document.querySelector('.right-main').innerHTML = '');
     displayToPage();
+    window.location.reload()
   }
 }

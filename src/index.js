@@ -4,7 +4,7 @@ import '@fortawesome/fontawesome-free/js/solid';
 import '@fortawesome/fontawesome-free/js/regular';
 import '@fortawesome/fontawesome-free/js/brands';
 
-import { addNew, displayForm, closeForm, resetForm } from './storage';
+import { addNew, displayForm, closeForm, resetForm, todoData } from './storage';
 import { displayToPage } from './todayElements';
 import { resetPage, deleteItems } from './newFile';
 
@@ -27,29 +27,25 @@ logobutton.addEventListener('click', deleteItems);
 
 window.onload = displayToPage();
 
-// // Get all cards
-// const cards = document.querySelectorAll(".box");
-// console.log(cards)
-
-// // Loop through each card
-// for (let i = 0; i < cards.length; i++) {
-// // Get delete icon for each card
-// const deleteIcon = cards[i].querySelector(".fa-trash");
-// console.log(deleteIcon)
-// // Add click event to delete icon
-// deleteIcon.addEventListener("click", function() {
-// // Get card data
-// //const cardData = cards[i].querySelector(".card-data").textContent;
-
-// // Delete card from local storage
-// let cardDataObjects = JSON.parse(localStorage.getItem("todoData")) || [];
-// console.log(cardDataObjects)
-// cardDataObjects = cardDataObjects.filter(function(cardDataObject) {
-// return cardDataObject !== cardData;
-// });
-// localStorage.setItem("cardDataObjects", JSON.stringify(cardDataObjects));
-
-// // Remove card from the DOM
-// cards[i].remove();
-// });
-// }
+// Get all cards
+const cards = document.querySelectorAll(".box");
+// Loop through each card
+for (let i = 0; i < cards.length; i++) {
+// Get delete icon for each card
+const deleteIcon = cards[i].querySelector(".deleteB");
+// Add click event to delete icon
+deleteIcon.addEventListener("click", function() {
+// Get card data
+const cardData = cards[i].querySelector(".titleDiv").textContent;
+// Delete card from local storage
+let cardDataObjects = JSON.parse(localStorage.getItem("todoData")) || [];
+cardDataObjects = cardDataObjects.filter(function(cardDataObject) {
+return cardDataObject !== cardData;
+});
+cardDataObjects.splice(i,1)
+localStorage.setItem("todoData", JSON.stringify(cardDataObjects));
+// Remove card from the DOM
+cards[i].remove();
+localStorage.setItem("todoData", JSON.stringify(cardDataObjects));
+});
+}

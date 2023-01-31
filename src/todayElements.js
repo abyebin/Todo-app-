@@ -1,5 +1,5 @@
+import { deleteX} from "./newFile";
 
-const submitButton = document.getElementById('submitForm');
 const main = document.querySelector('.right-main');
 
 export function displayToPage() {
@@ -26,10 +26,16 @@ export function displayToPage() {
     edit.classList.add('fa-pen-to-square')
     iconsDiv.appendChild(edit)
 
+    const deleteContainer = document.createElement('div')
+    deleteContainer.classList.add('deleteB')
+    deleteContainer.addEventListener('click',function(){
+      console.log("Helloo")
+    })
+    iconsDiv.appendChild(deleteContainer)
     const dlt = document.createElement('i')
     dlt.classList.add('fa-solid')
     dlt.classList.add('fa-trash')
-    iconsDiv.appendChild(dlt)
+    deleteContainer.appendChild(dlt)
 
     const titleDiv = document.createElement('div');
     titleDiv.classList.add('titleDiv');
@@ -79,3 +85,5 @@ export function displayToPage() {
     }
   });
 }
+
+

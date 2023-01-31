@@ -9,6 +9,15 @@ export function resetPage(){
     displayToPage()
 }
 
+export function deleteItems(){
+    const storedData = JSON.parse(localStorage.getItem('todoData'))
+    
+    storedData.splice(0,1)
+    localStorage.setItem('todoData',JSON.stringify(storedData))
+    const page = (document.querySelector('.right-main').innerHTML = '');
+    displayToPage()
+}
+
 // const boxes = document.querySelector('.right-main')
 
 // boxes.addEventListener('click',(event)=>{
@@ -19,12 +28,9 @@ export function resetPage(){
 // })
 
 
-
-export function deleteItems(){
-    const storedData = JSON.parse(localStorage.getItem('todoData'))
-    
-    storedData.splice(0,1)
-    localStorage.setItem('todoData',JSON.stringify(storedData))
-    const page = (document.querySelector('.right-main').innerHTML = '');
-    displayToPage()
-}
+// export function deleteX(){
+//     const deleteButton  = document.querySelector('fa-trash')
+//     deleteButton.addEventListener('click',function(){
+//         console.log("Hello")
+//     })
+// }
